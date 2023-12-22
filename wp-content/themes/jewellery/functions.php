@@ -145,11 +145,17 @@ function jewellery_scripts()
 	//css
 	wp_enqueue_style('jewellery-bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.min.css');
 	wp_enqueue_style('jewellery-style', get_template_directory_uri() . '/assets/css/style.css');
+	wp_enqueue_style('jewellery-slick', get_template_directory_uri() . "/assets/css/slick.css");
 
 
 	//js
-	wp_enqueue_script('jewellery-main', get_template_directory_uri() . '/assets/js/main.js', array(), _S_VERSION, true);
 	wp_enqueue_script('jewellery-bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array(), _S_VERSION, true);
+	wp_enqueue_script('jewellery-jquery', get_template_directory_uri() . '/assets/js/jquery-3.7.1.min.js', array(), _S_VERSION, true);
+	wp_enqueue_script('jewellery-slick', get_template_directory_uri() . '/assets/js/slick.js', array(), _S_VERSION, true);
+	wp_enqueue_script('jewellery-main', get_template_directory_uri() . '/assets/js/main.js', array(), _S_VERSION, true);
+
+
+
 }
 add_action('wp_enqueue_scripts', 'jewellery_scripts');
 
