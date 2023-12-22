@@ -18,7 +18,10 @@
 				<div class="footer-logo"><a href="#"><img
 							src="<?php bloginfo('template_url'); ?>/assets/images/logo-dark.svg"></a></div>
 				<div class="footer-info">
-					<p>Condimentum adipiscing vel neque dis nam parturient orci at scelerisque neque dis nam parturient.
+					<p>
+						<?php
+						bloginfo('description')
+							?>
 					</p>
 				</div>
 				<div class="footer-contacts">
@@ -81,27 +84,6 @@
 		</div>
 	</div>
 </footer>
-
-
-
-
-<footer id="colophon" class="site-footer">
-	<div class="site-info">
-		<a href="<?php echo esc_url(__('https://wordpress.org/', 'jewellery')); ?>">
-			<?php
-			/* translators: %s: CMS name, i.e. WordPress. */
-			printf(esc_html__('Proudly powered by %s', 'jewellery'), 'WordPress');
-			?>
-		</a>
-		<span class="sep"> | </span>
-		<?php
-		/* translators: 1: Theme name, 2: Theme author. */
-		printf(esc_html__('Theme: %1$s by %2$s.', 'jewellery'), 'jewellery', '<a href="http://underscores.me/">Underscores.me</a>');
-		?>
-	</div><!-- .site-info -->
-</footer><!-- #colophon -->
-</div><!-- #page -->
-
 <?php wp_footer(); ?>
 
 </body>
