@@ -28,6 +28,8 @@
     --light-grey: #dfdfdf;
     --lora-font: "Lora", serif;
     --marcellus-font: "Marcellus", serif;
+    --footer-bg: #eaeaea;
+    --main-bg: #f4f4f4;
 }
 
 .btn-outline-white {
@@ -83,7 +85,9 @@ body {
 /* Header*/
 
 header {
-    background: black;
+    background: url("./../images/background.png");
+    background-position: center;
+    background-repeat: no-repeat;
     padding: 20px 0;
     font-family: var(--marcellus-font);
 }
@@ -99,6 +103,7 @@ header {
     text-transform: uppercase;
     border-bottom: 1px solid rgba(255, 255, 255, 0);
     transition: all 1s ease;
+    display: flex;
 }
 
 .nav-menu a:hover,
@@ -124,4 +129,76 @@ header {
 .nav-cart span {
     color: var(--white-color);
     text-transform: uppercase;
+}
+
+/* Footer */
+
+footer {
+    color: var(--grey-color);
+    padding: 60px 0 70px;
+    font-family: var(--lora-font);
+}
+
+.footer-contacts div {
+    margin-bottom: 10px;
+}
+
+.footer-contacts div:last-child {
+    margin-bottom: 0;
+}
+
+.footer-contacts div {
+    column-gap: 5px;
+}
+
+.footer-info {
+    margin-bottom: 30px;
+}
+
+.footer-logo {
+    margin-bottom: 15px;
+}
+
+.post {
+    column-gap: 15px;
+}
+
+footer h5 {
+    color: #000;
+    font-size: 18px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    font-family: var(--marcellus-font);
+}
+
+.post h6 {
+    text-transform: uppercase;
+    color: var(--dark-color);
+    margin-bottom: 11px;
+    font-size: 14px;
+    font-family: var(--marcellus-font);
+    max-width: 224px;
+}
+
+.post span {
+    opacity: 0.5;
+}
+
+.post:last-child {
+    margin-top: 30px;
+}
+
+.footer-stores a,
+.footer-links a {
+    color: var(--grey-color);
+}
+
+.footer-stores li,
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-stores li:last-child,
+.footer-links li:last-child {
+    margin-bottom: 0px;
 }
