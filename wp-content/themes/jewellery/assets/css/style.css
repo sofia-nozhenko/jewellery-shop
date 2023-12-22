@@ -1,0 +1,127 @@
+@font-face {
+    font-family: "Lora", serif;
+    font-display: swap;
+    src: url("../fonts/Lora-VariableFont_wght.ttf") format ("ttf");
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Marcellus", serif;
+    font-display: swap;
+    src: url("../fonts/Marcellus-Regular.ttf") format ("ttf");
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Lora", serif;
+    font-display: swap;
+    src: url("../fonts/Lora-Italic-VariableFont_wght.ttf") format ("ttf");
+    font-weight: 500;
+    font-style: italic;
+}
+
+:root {
+    --dark-color: #242424;
+    --gold-color: #c3935b;
+    --white-color: #fff;
+    --grey-color: #777;
+    --light-grey: #dfdfdf;
+    --lora-font: "Lora", serif;
+    --marcellus-font: "Marcellus", serif;
+}
+
+.btn-outline-white {
+    border: 1px solid #fff;
+    color: var(--white-color);
+}
+
+.btn-white {
+    background: #fff;
+}
+
+.btn-outline-grey {
+    border: 1px solid var(--light-grey);
+}
+
+.btn-grey {
+    background-color: var(--grey-color);
+}
+
+.container {
+    width: 1170px;
+    margin: 0 auto;
+}
+
+ul,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a {
+    margin: 0;
+    padding: 0;
+}
+
+ul li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration-line: none;
+}
+
+body {
+    font-family: var(--lora-font);
+    font-size: 14px;
+    font-weight: 400;
+}
+
+/* Header*/
+
+header {
+    background: black;
+    padding: 20px 0;
+    font-family: var(--marcellus-font);
+}
+
+.nav-menu ul {
+    display: flex;
+    column-gap: 30px;
+}
+
+.nav-menu a,
+.nav-account a {
+    color: var(--white-color);
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(255, 255, 255, 0);
+    transition: all 1s ease;
+}
+
+.nav-menu a:hover,
+.nav-account a:hover {
+    border-bottom: 1px solid rgba(255, 255, 255, 1);
+}
+
+.nav-icons button {
+    background: none;
+    border: none;
+}
+
+.nav-cart path,
+.nav-search path {
+    transition: all 1s ease;
+}
+
+.nav-cart:hover path,
+.nav-search:hover path {
+    fill: var(--gold-color);
+}
+
+.nav-cart span {
+    color: var(--white-color);
+    text-transform: uppercase;
+}
