@@ -153,7 +153,7 @@ header {
 
 .nav-menu ul {
     display: flex;
-    column-gap: 30px;
+    justify-content: space-between;
 }
 
 .nav-menu a,
@@ -194,7 +194,7 @@ header {
 
 .main {
     background: url("./../images/background.png");
-    background-position: center;
+    background-position: bottom;
     background-repeat: no-repeat;
     background-color: #000;
     color: var(--white-color);
@@ -219,7 +219,7 @@ header {
 
 /* Store */
 
-.store-info h2 {
+.section-title_big {
     font-size: 62px;
     font-family: var(--marcellus-font);
     color: var(--dark-color);
@@ -227,7 +227,7 @@ header {
     margin-bottom: 10px;
 }
 
-.store-info h3 {
+.section-title_small {
     font-size: 45px;
     font-family: var(--marcellus-font);
     color: var(--dark-color);
@@ -263,21 +263,46 @@ header {
 }
 
 .image-container {
+    display: flex;
+    align-items: center;
+    height: 370px;
+    width: 270px;
     position: relative;
-    display: inline-block;
+    justify-content: flex-end;
+    overflow: hidden;
+    flex-direction: column;
 }
 
 .image {
     width: 100%;
-    height: auto;
+    height: 100%;
 }
 
 .image-text {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
+    position: relative;
+    z-index: 1;
     width: 100%;
+    max-width: 240px;
+    transition: 0.25s linear;
+}
+
+.image-text-btn {
+    transition: 0.25s linear;
+    transform: translateY(100%);
+    text-transform: uppercase;
+    font-weight: 500;
+    background: none;
+    border: none;
+}
+
+.image-text-btn_dark {
+    color: #fff;
+}
+
+.image-container:hover .image-text-btn {
+    bottom: 0px;
+    transform: translateY(-50%);
+    margin-top: 30px;
 }
 
 .image-text h4 {
@@ -292,15 +317,25 @@ header {
 }
 
 .image-wrapper {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
     overflow: hidden;
 }
+
+.product-mb {
+    margin-bottom: 30px;
+}
+
 .product-image img {
     width: 100%;
-    transition: all 0.5s ease;
+    transition: all 0.25s linear;
 }
 
 .product-image:hover img {
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
 
 .image-text_white h4,
@@ -314,6 +349,7 @@ header {
     font-family: var(--marcellus-font);
     color: var(--dark-color);
     margin-bottom: 5px;
+    margin-top: 20px;
 }
 
 .product-desc {
@@ -332,6 +368,11 @@ header {
     width: 100%;
 }
 
+.product-item img {
+    width: 100%;
+    height: 270px;
+}
+
 .slick-prev.slick-arrow {
     background: url("./../images/chevron-left.svg") center no-repeat;
     font-size: 0;
@@ -342,6 +383,126 @@ header {
     background: url("./../images/chevron-right.svg") center no-repeat;
     font-size: 0;
     border: none;
+}
+
+/* Box */
+
+.box img {
+    width: 100%;
+}
+
+.box-btn {
+    margin-top: 20px;
+    width: 119px;
+}
+
+/* Discoount */
+
+.discount-desc {
+    color: var(--grey-color);
+    margin-bottom: 15px;
+}
+
+.discount-text li {
+    margin-bottom: 10px;
+    color: var(--grey-color);
+}
+
+.discount-text div {
+    margin-bottom: 30px;
+}
+
+.discount h2 {
+    font-size: 60px;
+}
+
+.discount h2 span {
+    color: var(--gold-color);
+}
+
+.discount-btns {
+    column-gap: 15px;
+}
+
+.discount-btn {
+    width: 118px;
+}
+
+.discount-img img {
+    width: 100%;
+}
+
+.discount-list li {
+    column-gap: 10px;
+}
+
+.discount-list {
+    margin-left: 30px;
+}
+
+/* Special offer */
+
+.special-offer-text {
+    width: 100%;
+    justify-content: flex-end;
+    display: flex;
+    background: url("./../images/jewelry-banner-img-1.png") no-repeat;
+}
+
+.special-offer-text span,
+.special-offer-text h4,
+.special-offer-text p {
+    color: var(--dark-color);
+    margin-bottom: 10px;
+}
+
+.special-offer-text h4 {
+    font-size: 54px;
+}
+
+.special-offer-text p,
+.offer-featured-products p,
+.offer-new-products p {
+    font-size: 18px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.special-offer-text p {
+    margin-bottom: 30px;
+}
+
+.special-offer-text div {
+    max-width: 295px;
+    margin: 25px 0;
+}
+
+.offer-item img {
+    max-width: 65px;
+    height: 65px;
+    width: 100%;
+}
+
+.offer-item p {
+    text-transform: none;
+    margin-bottom: 10px;
+}
+
+.offer-item span {
+    color: var(--gold-color);
+    font-weight: 700;
+}
+
+.offer-item {
+    column-gap: 17px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--light-grey);
+    background: #f4f4f4;
+    margin-bottom: 15px;
+}
+
+.offer-item:last-child {
+    margin-bottom: 0;
 }
 
 /* Footer */

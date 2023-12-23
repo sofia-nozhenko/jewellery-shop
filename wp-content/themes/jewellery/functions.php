@@ -186,4 +186,10 @@ if (defined('JETPACK__VERSION')) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+/*
+ * Woo
+ */
+
+require get_template_directory() . '/inc/woo.php';
+
 show_admin_bar(true);
