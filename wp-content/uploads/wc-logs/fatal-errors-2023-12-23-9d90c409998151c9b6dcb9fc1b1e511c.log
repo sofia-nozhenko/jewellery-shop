@@ -1,0 +1,52 @@
+2023-12-23T21:00:23+00:00 CRITICAL Uncaught Error: Call to a member function get_name() on array in D:\OSPanel\domains\handeny\wp-content\themes\jewellery\front-page.php:84
+Stack trace:
+#0 D:\OSPanel\domains\handeny\wp-includes\template-loader.php(106): include()
+#1 D:\OSPanel\domains\handeny\wp-blog-header.php(19): require_once('D:\\OSPanel\\doma...')
+#2 D:\OSPanel\domains\handeny\index.php(17): require('D:\\OSPanel\\doma...')
+#3 {main}
+  thrown in D:\OSPanel\domains\handeny\wp-content\themes\jewellery\front-page.php on line 84
+
+2023-12-23T21:01:44+00:00 CRITICAL Maximum execution time of 60 seconds exceeded in D:\OSPanel\domains\handeny\wp-content\themes\jewellery\front-page.php on line 84
+
+2023-12-23T21:02:01+00:00 CRITICAL Maximum execution time of 60 seconds exceeded in D:\OSPanel\domains\handeny\wp-content\themes\jewellery\front-page.php on line 83
+
+2023-12-23T21:07:47+00:00 CRITICAL Uncaught Error: Cannot use object of type WC_Product_Simple as array in D:\OSPanel\domains\handeny\wp-content\themes\jewellery\front-page.php:85
+Stack trace:
+#0 D:\OSPanel\domains\handeny\wp-includes\template-loader.php(106): include()
+#1 D:\OSPanel\domains\handeny\wp-blog-header.php(19): require_once('D:\\OSPanel\\doma...')
+#2 D:\OSPanel\domains\handeny\index.php(17): require('D:\\OSPanel\\doma...')
+#3 {main}
+  thrown in D:\OSPanel\domains\handeny\wp-content\themes\jewellery\front-page.php on line 85
+
+2023-12-23T21:09:05+00:00 CRITICAL Uncaught Error: Cannot use object of type WC_Product_Simple as array in D:\OSPanel\domains\handeny\wp-content\themes\jewellery\front-page.php:85
+Stack trace:
+#0 D:\OSPanel\domains\handeny\wp-includes\template-loader.php(106): include()
+#1 D:\OSPanel\domains\handeny\wp-blog-header.php(19): require_once('D:\\OSPanel\\doma...')
+#2 D:\OSPanel\domains\handeny\index.php(17): require('D:\\OSPanel\\doma...')
+#3 {main}
+  thrown in D:\OSPanel\domains\handeny\wp-content\themes\jewellery\front-page.php on line 85
+
+2023-12-23T21:09:26+00:00 CRITICAL Uncaught Error: Cannot use object of type WC_Product_Simple as array in D:\OSPanel\domains\handeny\wp-content\themes\jewellery\front-page.php:85
+Stack trace:
+#0 D:\OSPanel\domains\handeny\wp-includes\template-loader.php(106): include()
+#1 D:\OSPanel\domains\handeny\wp-blog-header.php(19): require_once('D:\\OSPanel\\doma...')
+#2 D:\OSPanel\domains\handeny\index.php(17): require('D:\\OSPanel\\doma...')
+#3 {main}
+  thrown in D:\OSPanel\domains\handeny\wp-content\themes\jewellery\front-page.php on line 85
+
+2023-12-23T21:09:51+00:00 CRITICAL Uncaught Error: Cannot use object of type WC_Product_Simple as array in D:\OSPanel\domains\handeny\wp-content\themes\jewellery\front-page.php:85
+Stack trace:
+#0 D:\OSPanel\domains\handeny\wp-includes\template-loader.php(106): include()
+#1 D:\OSPanel\domains\handeny\wp-blog-header.php(19): require_once('D:\\OSPanel\\doma...')
+#2 D:\OSPanel\domains\handeny\index.php(17): require('D:\\OSPanel\\doma...')
+#3 {main}
+  thrown in D:\OSPanel\domains\handeny\wp-content\themes\jewellery\front-page.php on line 85
+
+2023-12-23T21:14:32+00:00 CRITICAL Uncaught Error: Cannot use object of type WC_Product_Simple as array in D:\OSPanel\domains\handeny\wp-content\themes\jewellery\front-page.php:85
+Stack trace:
+#0 D:\OSPanel\domains\handeny\wp-includes\template-loader.php(106): include()
+#1 D:\OSPanel\domains\handeny\wp-blog-header.php(19): require_once('D:\\OSPanel\\doma...')
+#2 D:\OSPanel\domains\handeny\index.php(17): require('D:\\OSPanel\\doma...')
+#3 {main}
+  thrown in D:\OSPanel\domains\handeny\wp-content\themes\jewellery\front-page.php on line 85
+
