@@ -1,7 +1,7 @@
 $(".product-slider").slick({
     slidesToShow: 3,
     slidesToScroll: 1,
-    autoplay: false,
+    autoplay: true,
     autoplaySpeed: 2000,
     arrows: true,
     responsive: [
@@ -18,8 +18,8 @@ $(".product-slider").slick({
 $(".posts-slider").slick({
     slidesToShow: 3,
     slidesToScroll: 1,
-    autoplay: false,
-    autoplaySpeed: 2000,
+    autoplay: true,
+    autoplaySpeed: 4000,
     arrows: true,
     responsive: [
         {

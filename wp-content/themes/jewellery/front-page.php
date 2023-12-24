@@ -16,8 +16,16 @@ get_header();
                 <p>An sincerity so extremity he additions. Her yet there truth merit. Mrs all projecting favourable now
                     unpleasing. Son law garden chatty temper. Oh children provided to mr elegance marriage strongly</p>
                 <div class="d-flex">
-                    <button class="btn-white btn-main d-flex justify-content-center">Shop now</button>
-                    <button class="btn-outline-white btn-main d-flex justify-content-center">View more</button>
+                    <?php
+                    $btn_link = get_field('btn_shop_link', 50);
+                    ?>
+                    <a href="<?= $btn_link['url'] ?>" class="btn-white btn-main d-flex justify-content-center">Shop
+                        now</a>
+                    <?php
+                    $btn_view_link = get_field('view_more', 50);
+                    ?>
+                    <a href="<?= $btn_view_link['url'] ?>"
+                        class="btn-outline-white btn-main d-flex justify-content-center">View more</a>
                 </div>
             </div>
         </div>
@@ -40,8 +48,8 @@ get_header();
                     </p>
                 </div>
                 <div class="d-flex justify-content-center store-btn-wrapp">
-                    <button class="btn-main btn-grey">Shop now</button>
-                    <button class="btn-main btn-outline-grey">View more</button>
+                    <a href="<?= $btn_link['url'] ?>" class="btn-main btn-grey">Shop now</a>
+                    <a href="#" class="btn-main btn-outline-grey">View more</a>
                 </div>
             </div>
         </div>
@@ -152,7 +160,7 @@ get_header();
                         <h4>Tristique justo</h4>
                         <p>Started now shortly had for assured hearing expense led juvenile.</p>
                     </div>
-                    <button class="image-text-btn image-text-btn_dark">Shop now</button>
+                    <a href="#" class="image-text-btn image-text-btn_dark">Shop now</a>
                 </div>
             </div>
             <div class="product-slider col-12 col-sm-6 col-lg-9 d-flex">
@@ -239,7 +247,7 @@ get_header();
                 <span class='italic-text'>Special offer</span>
                 <h2 class='section-title_big'>JEWELLERY BOX</h2>
                 <h3 class='section-title_small'>ALL IN ONE BOX</h3>
-                <button class="btn-main btn-grey box-btn">Check Now</button>
+                <a href="#" class="btn-main btn-grey box-btn">Check Now</a>
             </div>
         </div>
     </div>
@@ -276,8 +284,8 @@ get_header();
                     </ul>
                 </div>
                 <div class="d-flex discount-btns">
-                    <button class="btn-main btn-grey discount-btn">Go to shop</button>
-                    <button class="btn-main btn-outline-grey">View more</button>
+                    <a href="<?= $btn_link['url'] ?>" class="btn-main btn-grey discount-btn">Go to shop</a>
+                    <a href="#" class="btn-main btn-outline-grey">View more</a>
                 </div>
             </div>
             <div class="discount-img col-12 col-md-6">

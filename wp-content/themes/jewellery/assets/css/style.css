@@ -37,6 +37,8 @@
     font-weight: 500;
     padding: 10px 0;
     transition: all 0.5s ease;
+    display: flex;
+    justify-content: center;
 }
 
 .btn-outline-white {
@@ -74,6 +76,7 @@
 .btn-grey:hover {
     background: #000;
     border: 1px solid #000;
+    color: var(--white-color);
 }
 
 .btn-outline-grey {
@@ -85,6 +88,7 @@
 
 .btn-outline-grey:hover {
     background: var(--light-grey);
+    color: var(--white-color);
 }
 
 .container {
@@ -346,6 +350,10 @@ header {
     bottom: 0px;
     transform: translateY(-50%);
     margin-top: 30px;
+}
+
+.image-container a:last-child {
+    color: var(--white-color);
 }
 
 .image-text h4 {
@@ -851,7 +859,7 @@ footer h5 {
 /* Search */
 
 .search-active {
-    display: none;
+    display: none !important;
 }
 
 .search-hidden {
@@ -1029,4 +1037,19 @@ footer h5 {
         background: none;
         background-color: #000;
     }
+}
+
+.menu li {
+    position: relative;
+}
+
+.menu li:before {
+    content: "";
+    background: url("./../images/chevron.svg");
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    right: -20px;
+    top: 40%;
+    transform: translateY(-50%);
 }
