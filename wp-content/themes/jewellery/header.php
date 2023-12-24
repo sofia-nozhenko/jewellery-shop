@@ -30,11 +30,11 @@
 		<div class="container">
 			<div class="row align-items-center">
 
-				<div class="nav-logo col-2"><a href="<?php echo esc_url(home_url('/')); ?>">
+				<div class="nav-logo col-6 col-md-2"><a href="<?php echo esc_url(home_url('/')); ?>">
 						<?php the_custom_logo(); ?>
 					</a>
 				</div>
-				<div class="nav-menu col-6">
+				<div class="nav-menu col-6 d-none d-md-block">
 					<nav>
 						<?php
 						wp_nav_menu(
@@ -46,10 +46,10 @@
 						?>
 					</nav>
 				</div>
-				<div class="nav-account col-2 justify-content-end">
+				<div class="nav-account d-none d-md-flex col-2 justify-content-end">
 					<a href="#">Login/Register</a>
 				</div>
-				<div class="nav-icons col-2 justify-content-end align-items-center">
+				<div class="nav-icons col-6 col-md-2 justify-content-end align-items-center">
 					<div class="nav-search "><a id="search"><svg xmlns="http://www.w3.org/2000/svg" width="24"
 								height="24" viewBox="0 0 24 24" fill="none">
 								<path
@@ -65,18 +65,46 @@
 									fill="white" />
 							</svg>
 						</a>
-						<span>
-							$ 0.00
-						</span>
+						<?php
+						$total_cart_price = 0;
+
+						foreach (WC()->cart->get_cart() as $cart_item) {
+							$_product = apply_filters('woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key);
+
+							if ($_product && $_product->exists() && $cart_item['quantity'] > 0 && apply_filters('woocommerce_cart_item_visible', true, $cart_item)) {
+								$subtotal = $_product->get_price() * $cart_item['quantity'];
+								$total_cart_price += $subtotal;
+							}
+						}
+						echo wc_price($total_cart_price);
+						?>
+
 					</div>
 				</div>
-
-				<div id="headerSearchBar" class="col-10 search-hidden">
+				<div id="headerSearchBar" class="col-6 col-md-8 search-hidden">
 					<div id="headerSearchInput">
-						<span class="text-white">>>> Input blet <<< </span>
-						<button class="ml-auto text-white" id="hideHeaderSearchBar">CLOSE</button>
+						<div class="input-wrapp d-flex">
+							<span class="search-icon">
+								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+									fill="none">
+									<path
+										d="M11.0887 4C15.0017 4 18.1774 7.17574 18.1774 11.0887C18.1774 15.0017 15.0017 18.1774 11.0887 18.1774C7.17574 18.1774 4 15.0017 4 11.0887C4 7.17574 7.17574 4 11.0887 4ZM11.0887 16.6021C14.1345 16.6021 16.6021 14.1345 16.6021 11.0887C16.6021 8.04214 14.1345 5.57527 11.0887 5.57527C8.04214 5.57527 5.57527 8.04214 5.57527 11.0887C5.57527 14.1345 8.04214 16.6021 11.0887 16.6021ZM17.7718 16.6581L20 18.8855L18.8855 20L16.6581 17.7718L17.7718 16.6581Z"
+										fill="white" />
+								</svg>
+							</span>
+							<input placeholder="Search for products" type="text" class="search-input"
+								placeholder="Search">
+							<button class="close-icon" id="hideHeaderSearchBar"><svg xmlns="http://www.w3.org/2000/svg"
+									width="24" height="24" viewBox="0 0 24 24" fill="none">
+									<path
+										d="M6.4 19L5 17.6L10.6 12L5 6.4L6.4 5L12 10.6L17.6 5L19 6.4L13.4 12L19 17.6L17.6 19L12 13.4L6.4 19Z"
+										fill="white" />
+								</svg>
+							</button>
+						</div>
+
+
 					</div>
-					
 				</div>
 			</div>
 		</div>

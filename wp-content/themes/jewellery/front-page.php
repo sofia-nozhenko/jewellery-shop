@@ -10,7 +10,7 @@ get_header();
 <section class="main section-bg">
     <div class="container">
         <div class="row">
-            <div class="main-info col-5 offset-1">
+            <div class="main-info col-12 col-md-5 offset-1">
                 <span class='italic-text'>Donec sollicitudin</span>
                 <h1>Jewellery store</h1>
                 <p>An sincerity so extremity he additions. Her yet there truth merit. Mrs all projecting favourable now
@@ -58,7 +58,7 @@ get_header();
                 <p>There are many variations of passages of lorem ipsum available.</p>
             </div>
             <!-- First part -->
-            <div class="product-image product-mb col-3 text-center">
+            <div class="product-image product-mb col-12 col-sm-6 col-lg-3 text-center">
                 <div class="image-container">
                     <div class="image-wrapper">
                         <img src="<?php bloginfo('template_url'); ?>/assets/images/image-2.png" alt="Product"
@@ -71,7 +71,7 @@ get_header();
                     <button class="image-text-btn">Shop now</button>
                 </div>
             </div>
-            <div class="product-slider product-mb col-9 d-flex">
+            <div class="product-slider product-mb col-12 col-sm-6 col-lg-9 d-flex">
                 <?php
                 $first_slider_slides_limit = get_field('slides_amount_first_slider', 50);
                 $first_slider_product_category = get_field('product_category_first_slider', 50);
@@ -142,7 +142,7 @@ get_header();
 
             </div>
             <!-- Second part -->
-            <div class="product-image col-3 text-center">
+            <div class="product-image col-12 col-sm-6 col-lg-3 text-center">
                 <div class="image-container">
                     <div class="image-wrapper">
                         <img src="<?php bloginfo('template_url'); ?>/assets/images/image-3.png" alt="Product"
@@ -155,7 +155,7 @@ get_header();
                     <button class="image-text-btn image-text-btn_dark">Shop now</button>
                 </div>
             </div>
-            <div class="product-slider col-9 d-flex">
+            <div class="product-slider col-12 col-sm-6 col-lg-9 d-flex">
                 <?php
                 $second_slider_slides_limit = get_field('slides_amount_second_slider', 50);
                 $second_slider_product_category = get_field('product_category_second_slider', 50);
@@ -231,7 +231,7 @@ get_header();
 </section>
 <section class="box section-mg section-bg">
     <div class="container">
-        <div class="row">
+        <div class="row align-items-center">
             <div class="col-6">
                 <img src="<?php bloginfo('template_url'); ?>/assets/images/video.png" alt="Video">
             </div>
@@ -247,7 +247,7 @@ get_header();
 <section class="discount section-mg section-bg">
     <div class="container">
         <div class="row">
-            <div class="col-6 discount-text">
+            <div class="col-12 col-md-6  discount-text mb-5 mb-md-0">
                 <h2 class='section-title_big'>DISCOUNT OF <span>20%</span></h2>
                 <h3 class='section-title_small'>ON ALL GOLD RINGS</h3>
                 <p class="discount-desc">She exposed painted fifteen are noisier mistake led waiting. Surprise not
@@ -280,7 +280,7 @@ get_header();
                     <button class="btn-main btn-outline-grey">View more</button>
                 </div>
             </div>
-            <div class="discount-img col-6">
+            <div class="discount-img col-12 col-md-6">
                 <img src="<?php bloginfo('template_url'); ?>/assets/images/image-7.png" alt="Discount">
             </div>
         </div>
@@ -289,7 +289,7 @@ get_header();
 <section class="special-offer section-mg section-bg">
     <div class="container">
         <div class="row">
-            <div class="col-6">
+            <div class="col-12 col-lg-6 mb-5 mb-lg-0 ">
                 <div class="special-offer-text">
                     <div>
                         <span class="italic-text">
@@ -313,7 +313,7 @@ get_header();
                     'product_cat'
                 );
                 ?>
-                <div class="col-3 offer-featured-products">
+                <div class="col-12 col-md-6 col-lg-3 mb-5 mb-md-0  offer-featured-products">
                     <p>
                         <?php echo $first_column_product_category['label'] ?>
                     </p>
@@ -371,7 +371,7 @@ get_header();
                 );
 
                 ?>
-                <div class="col-3 offer-new-products">
+                <div class="col-12 col-md-6 col-lg-3 mb-5 mb-md-0 offer-new-products">
                     <p>
                         <?php echo $second_column_product_category['label'] ?>
                     </p>
