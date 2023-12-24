@@ -1,9 +1,12 @@
 <?php
 
-// Template name : Home page
+/**
+ * Template Name: Front Page
+ */
 get_header();
 ?>
 
+<?php ?>
 <section class="main section-bg">
     <div class="container">
         <div class="row">
@@ -36,7 +39,7 @@ get_header();
                         unpleasing. Son law garden chatty temper. Oh children provided to mr elegance marriage strongly.
                     </p>
                 </div>
-                <div class="d-flex justify-content-center">
+                <div class="d-flex justify-content-center store-btn-wrapp">
                     <button class="btn-main btn-grey">Shop now</button>
                     <button class="btn-main btn-outline-grey">View more</button>
                 </div>
@@ -70,11 +73,24 @@ get_header();
             </div>
             <div class="product-slider product-mb col-9 d-flex">
                 <?php
-                $query = new WC_Product_Query(array(
-                    // ACF
-                    'limit' => 4,
+                $first_slider_slides_limit = get_field('slides_amount_first_slider', 50);
+                $first_slider_product_category = get_field('product_category_first_slider', 50);
+                $first_slider_category = get_term_by('slug', $first_slider_product_category['value'], 'product_cat');
+
+                $args = array(
+                    'post_status' => 'publish',
+                    'limit' => $first_slider_slides_limit,
                     'orderby' => 'date',
-                ));
+                    'tax_query' => array(
+                        array(
+                            'taxonomy' => 'product_cat',
+                            'field' => 'id',
+                            'terms' => $first_slider_category->term_id,
+                        ),
+                    ),
+                );
+
+                $query = new WC_Product_Query($args);
                 $products = $query->get_products();
 
                 foreach ($products as $product) {
@@ -141,15 +157,30 @@ get_header();
             </div>
             <div class="product-slider col-9 d-flex">
                 <?php
-                $query = new WC_Product_Query(array(
-                    // ACF
-                    'limit' => 4,
-                    'orderby' => 'rand',
-                ));
+                $second_slider_slides_limit = get_field('slides_amount_second_slider', 50);
+                $second_slider_product_category = get_field('product_category_second_slider', 50);
+                $second_slider_category = get_term_by(
+                    'slug',
+                    $second_slider_product_category['value'],
+                    'product_cat'
+                );
+
+                $args = array(
+                    'post_status' => 'publish',
+                    'limit' => $second_slider_slides_limit,
+                    'orderby' => 'date',
+                    'tax_query' => array(
+                        array(
+                            'taxonomy' => 'product_cat',
+                            'field' => 'id',
+                            'terms' => $second_slider_category->term_id,
+                        ),
+                    ),
+                );
+                $query = new WC_Product_Query($args);
                 $products = $query->get_products();
 
                 foreach ($products as $product) {
-                    // Получаем основные данные о товаре
                     $product_name = $product->get_name();
                     $product_description = $product->get_short_description();
                     $product_price = $product->get_price();
@@ -270,72 +301,129 @@ get_header();
                         <button class="btn-main btn-grey">View more</button>
                     </div>
                 </div>
+            </div>
 
-            </div>
-            <div class="col-3 offer-featured-products">
-                <p>FEATURED PRODUCTS</p>
-                <div class=" d-flex offer-item">
+            <?php
+            $first_column_items_limit = get_field('items_amount_first_column', 50);
+            if ($first_column_items_limit > 0):
+                $first_column_product_category = get_field('items_category_first_column', 50);
+                $first_column_category = get_term_by(
+                    'slug',
+                    $first_column_product_category['value'],
+                    'product_cat'
+                );
+                ?>
+                <div class="col-3 offer-featured-products">
+                    <p>
+                        <?php echo $first_column_product_category['label'] ?>
+                    </p>
                     <div>
-                        <img src="<?php bloginfo('template_url'); ?>/assets/images/slide-1.png" alt=" Diamond">
-                    </div>
-                    <div>
-                        <p>Curabitur sitamet</p>
-                        <span>$169.00</span>
-                    </div>
-                </div>
-                <div class=" d-flex offer-item">
-                    <div>
-                        <img src="<?php bloginfo('template_url'); ?>/assets/images/slide-2.png" alt=" Diamond">
-                    </div>
-                    <div>
-                        <p>Accumsan tincidunt</p>
-                        <span>$199.00</span>
-                    </div>
-                </div>
-                <div class=" d-flex offer-item">
-                    <div>
-                        <img src="<?php bloginfo('template_url'); ?>/assets/images/slide-3.png" alt=" Diamond">
-                    </div>
-                    <div>
-                        <p>Praesent sapienmassa</p>
-                        <span>$119.00</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-3 offer-new-products">
-                <p>NEW PRODUCTS</p>
-                <div class=" d-flex offer-item">
-                    <div>
-                        <img src="<?php bloginfo('template_url'); ?>/assets/images/slide-9.png" alt=" Diamond">
-                    </div>
-                    <div>
-                        <p>Sollicitudin molestie</p>
-                        <span>$259.00</span>
-                    </div>
-                </div>
-                <div class=" d-flex offer-item">
-                    <div>
-                        <img src="<?php bloginfo('template_url'); ?>/assets/images/slide-6.png" alt=" Diamond">
-                    </div>
-                    <div>
-                        <p>Primis faucibus orci</p>
-                        <span>$239.00</span>
-                    </div>
-                </div>
-                <div class=" d-flex offer-item">
-                    <div>
-                        <img src="<?php bloginfo('template_url'); ?>/assets/images/slide-4.png" alt=" Diamond">
-                    </div>
-                    <div>
-                        <p>Donec sollicitudin</p>
-                        <span>$219.00</span>
+                        <?php
+                        $args = array(
+                            'post_status' => 'publish',
+                            'limit' => $first_column_items_limit,
+                            'orderby' => 'date',
+                            'tax_query' => array(
+                                array(
+                                    'taxonomy' => 'product_cat',
+                                    'field' => 'id',
+                                    'terms' => $first_column_category->term_id,
+                                ),
+                            ),
+                        );
+                        $query = new WC_Product_Query($args);
+                        $products = $query->get_products();
+
+                        foreach ($products as $product) {
+                            $product_name = $product->get_name();
+                            $product_description = $product->get_short_description();
+                            $product_price = $product->get_price();
+                            $product_image = $product->get_image(); ?>
+                            <div class="d-flex offer-item">
+                                <div>
+                                    <?= $product->get_image('full'); ?>
+                                </div>
+                                <div>
+                                    <p>
+                                        <?= $product->get_name(); ?>
+                                    </p>
+                                    <span>
+                                        <?= $product->get_price(); ?>
+                                    </span>
+                                </div>
+                            </div>
+                            <?php
+                        }
+                        ?>
                     </div>
                 </div>
-            </div>
+            <?php endif; ?>
+
+            <?php
+            $second_column_items_limit = get_field('items_amount_second_column', 50);
+            if ($second_column_items_limit > 0):
+                $second_column_items_limit = get_field('items_amount_second_column', 50);
+                $second_column_product_category = get_field('items_category_second_column', 50);
+                $second_column_category = get_term_by(
+                    'slug',
+                    $second_column_product_category['value'],
+                    'product_cat'
+                );
+
+                ?>
+                <div class="col-3 offer-new-products">
+                    <p>
+                        <?php echo $second_column_product_category['label'] ?>
+                    </p>
+                    <div>
+                        <?php
+
+                        $args = array(
+                            'post_status' => 'publish',
+                            'limit' => $second_column_items_limit,
+                            'orderby' => 'date',
+                            'tax_query' => array(
+                                array(
+                                    'taxonomy' => 'product_cat',
+                                    'field' => 'id',
+                                    'terms' => $second_column_category->term_id,
+                                ),
+                            ),
+                        );
+                        $query = new WC_Product_Query($args);
+                        $products = $query->get_products();
+
+                        foreach ($products as $product) {
+                            $product_name = $product->get_name();
+                            $product_description = $product->get_short_description();
+                            $product_price = $product->get_price();
+                            $product_image = $product->get_image(); ?>
+                            <div class="d-flex offer-item">
+                                <div>
+                                    <?= $product->get_image('full'); ?>
+                                </div>
+                                <div>
+                                    <p>
+                                        <?= $product->get_name(); ?>
+                                    </p>
+                                    <span>
+                                        <?= $product->get_price(); ?>
+                                    </span>
+                                </div>
+                            </div>
+                            <?php
+                        }
+                        ?>
+                    </div>
+                </div>
+            <?php endif; ?>
         </div>
     </div>
 </section>
-<section class="blog section-mg section-bg">
+
+
+
+<section class="blog section-mg section-bg section-mb">
     <div class="container">
         <div class="row">
             <div class="col-12 text-center blog-text">
@@ -345,17 +433,88 @@ get_header();
                 <h4 class='section-title'>JEWELRY DESIGN BLOG</h4>
                 <p>There are many variations of passages of lorem ipsum available.</p>
             </div>
-            <div class="posts-slider">
-                <div class="post-wrapper">
-                    <div class="post-item">
 
+            <?php
+            $blog_items_amount = get_field('blog_slides_amount', 50);
+
+
+            $args = array(
+                'post_status' => 'publish',
+                'posts_per_page' => $blog_items_amount,
+                'post_type' => 'post',
+                'orderby' => 'date',
+            );
+
+            $query = new WP_Query($args);
+            ?>
+
+            <div class="posts-slider d-flex col-12">
+                <?php while ($query->have_posts()) {
+                    $post_date = explode(':', get_the_date('j : M'));
+                    $query->the_post();
+                    $post_excerpt = get_the_excerpt();
+                    $image_description = wp_get_attachment_caption(get_post_thumbnail_id($post->ID));
+                    $posted_by = get_field('posted_by', $post->ID);
+                    $user_name = get_field('user_name', $post->ID);
+                    $user_avatar = get_field('user_avatar', $post->ID);
+                    $post_link_text = get_field('post_link_text', $post->ID);
+
+                    ?>
+                    <div class="post-wrapper">
+                        <div class="post-item">
+                            <div class="post-item-img">
+                                <div class="post-item-date">
+                                    <span>
+                                        <?php echo $post_date[0] ?>
+                                    </span>
+                                    <span>
+                                        <?php echo $post_date[1] ?>
+                                    </span>
+                                </div>
+                                <img src="<?php bloginfo('template_url'); ?>/assets/images/post-img.png" alt="Post">
+                                <div class="post-item-attr">
+                                    <p>
+                                        <?php echo $image_description ?>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="post-item-text">
+                                <h5>
+                                    <?php echo get_the_title() ?>
+                                </h5>
+                                <div class="post-item-avatar">
+
+                                    <?php if (!empty($user_name)): ?>
+                                        <span>
+                                            <?php echo $posted_by ?>
+                                        </span>
+                                        <?php echo !empty($user_avatar)
+                                            ? '<img src=' . $user_avatar['url'] . ' alt=' . $user_avatar['alt'] . '>'
+                                            : ''
+                                            ?>
+                                        <span>
+                                            <?php echo $user_name ?>
+                                        </span>
+                                    <?php endif; ?>
+
+                                </div>
+                                <?php if (!empty($post_excerpt)): ?>
+                                    <p>
+                                        <?php echo wp_trim_words($post_excerpt, 18, '...') ?>
+                                    </p>
+                                <?php endif; ?>
+
+                                <a href="<?php echo get_the_permalink() ?>" class="post-btn">
+                                    <?php echo $post_link_text ?>
+                                </a>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                <?php } ?>
             </div>
         </div>
     </div>
 </section>
-
 
 
 <?php

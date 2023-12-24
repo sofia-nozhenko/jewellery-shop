@@ -149,8 +149,8 @@ function jewellery_scripts()
 
 
 	//js
-	wp_enqueue_script('jewellery-bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array(), _S_VERSION, true);
 	wp_enqueue_script('jewellery-jquery', get_template_directory_uri() . '/assets/js/jquery-3.7.1.min.js', array(), _S_VERSION, true);
+	wp_enqueue_script('jewellery-bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array(), _S_VERSION, true);
 	wp_enqueue_script('jewellery-slick', get_template_directory_uri() . '/assets/js/slick.js', array(), _S_VERSION, true);
 	wp_enqueue_script('jewellery-main', get_template_directory_uri() . '/assets/js/main.js', array(), _S_VERSION, true);
 
@@ -192,4 +192,4 @@ if (defined('JETPACK__VERSION')) {
 
 require get_template_directory() . '/inc/woo.php';
 
-show_admin_bar(true);
+show_admin_bar(false);

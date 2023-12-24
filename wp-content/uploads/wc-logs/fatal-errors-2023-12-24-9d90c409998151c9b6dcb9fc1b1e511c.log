@@ -1,0 +1,34 @@
+2023-12-24T09:48:33+00:00 CRITICAL Uncaught Error: Call to undefined function get_page_template_id() in D:\OSPanel\domains\handeny\wp-content\themes\jewellery\front-page.php:62
+Stack trace:
+#0 D:\OSPanel\domains\handeny\wp-includes\template-loader.php(106): include()
+#1 D:\OSPanel\domains\handeny\wp-blog-header.php(19): require_once('D:\\OSPanel\\doma...')
+#2 D:\OSPanel\domains\handeny\index.php(17): require('D:\\OSPanel\\doma...')
+#3 {main}
+  thrown in D:\OSPanel\domains\handeny\wp-content\themes\jewellery\front-page.php on line 62
+
+2023-12-24T10:02:39+00:00 CRITICAL Cannot redeclare get_page_template() (previously declared in D:\OSPanel\domains\handeny\wp-includes\template.php:468) in D:\OSPanel\domains\handeny\wp-content\themes\jewellery\front-page.php on line 63
+
+2023-12-24T11:04:55+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Term as array in D:\OSPanel\domains\handeny\wp-content\themes\jewellery\front-page.php:92
+Stack trace:
+#0 D:\OSPanel\domains\handeny\wp-includes\template-loader.php(106): include()
+#1 D:\OSPanel\domains\handeny\wp-blog-header.php(19): require_once('D:\\OSPanel\\doma...')
+#2 D:\OSPanel\domains\handeny\index.php(17): require('D:\\OSPanel\\doma...')
+#3 {main}
+  thrown in D:\OSPanel\domains\handeny\wp-content\themes\jewellery\front-page.php on line 92
+
+2023-12-24T11:05:49+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Term as array in D:\OSPanel\domains\handeny\wp-content\themes\jewellery\front-page.php:64
+Stack trace:
+#0 D:\OSPanel\domains\handeny\wp-includes\template-loader.php(106): include()
+#1 D:\OSPanel\domains\handeny\wp-blog-header.php(19): require_once('D:\\OSPanel\\doma...')
+#2 D:\OSPanel\domains\handeny\index.php(17): require('D:\\OSPanel\\doma...')
+#3 {main}
+  thrown in D:\OSPanel\domains\handeny\wp-content\themes\jewellery\front-page.php on line 64
+
+2023-12-24T11:07:06+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Term as array in D:\OSPanel\domains\handeny\wp-content\themes\jewellery\front-page.php:64
+Stack trace:
+#0 D:\OSPanel\domains\handeny\wp-includes\template-loader.php(106): include()
+#1 D:\OSPanel\domains\handeny\wp-blog-header.php(19): require_once('D:\\OSPanel\\doma...')
+#2 D:\OSPanel\domains\handeny\index.php(17): require('D:\\OSPanel\\doma...')
+#3 {main}
+  thrown in D:\OSPanel\domains\handeny\wp-content\themes\jewellery\front-page.php on line 64
+
